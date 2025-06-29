@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  nestjs-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # 또는 Docker Hub 이미지 사용시:
+    # image: rookie0031/sample-nest-server:latest
+    container_name: sample-nest-server
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.docker.compose.service=nestjs-api"
+      - "description=NestJS Swagger API Documentation Example"
+
+  # 추가 서비스들 (선택사항)
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: nestjs-postgres
+  #   environment:
+  #     POSTGRES_DB: nestjs_db
+  #     POSTGRES_USER: nestjs
+  #     POSTGRES_PASSWORD: password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: unless-stopped
+
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: nestjs-redis
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped
+
+# volumes:
+#   postgres_data:
+
+networks:
+  default:
+    name: nestjs-network
