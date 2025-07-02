@@ -21,6 +21,11 @@ export class LoggingInterceptor implements NestInterceptor {
     const userAgent = headers['user-agent'] || '';
     const startTime = Date.now();
 
+    // Health check 엔드포인트는 로그를 찍지 않음
+    if (url === '/health') {
+      return next.handle();
+    }
+
     // 요청 로그
     this.logger.log(
       `📨 ${method} ${url} - ${ip} - ${userAgent} - Started`,
