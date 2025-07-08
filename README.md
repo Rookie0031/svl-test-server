@@ -1,21 +1,4 @@
-# 🎓 NestJS Swagger API 문서화 강의
-
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
-
-## 📚 강의 개요
-
-이 프로젝트는 **NestJS**와 **Swagger**를 사용한 API 문서화 방법을 학습하기 위한 실습용 예제입니다. 초보 개발자들이 단계별로 API 문서화의 핵심 개념을 이해하고 실습할 수 있도록 구성되었습니다.
-
-## 🎯 학습 목표
-
-- ✅ **NestJS 프레임워크** 이해 및 활용
-- ✅ **Swagger/OpenAPI 3.0**을 통한 API 문서화
-- ✅ **DTO(Data Transfer Object)** 설계 및 검증
-- ✅ **RESTful API** 설계 패턴 학습
-- ✅ **에러 처리** 및 응답 표준화
-- ✅ **페이지네이션** 및 **검색 기능** 구현
+# 🎓 NestJS Swagger API
 
 ## 🛠️ 주요 기능
 
@@ -171,23 +154,6 @@ docker buildx build --platform linux/amd64,linux/arm64 \
 - ✅ **헬스체크**: 컨테이너 상태 모니터링
 - ✅ **로깅**: 구조화된 애플리케이션 로그
 
-## 📝 실습 과제
-
-### 초급 과제
-1. **새로운 API 추가**: 현재 시간을 반환하는 `/time` API 구현
-2. **DTO 확장**: 사용자 DTO에 전화번호 필드 추가
-3. **검증 규칙 추가**: 이메일 형식 검증 강화
-
-### 중급 과제
-1. **새로운 도메인 추가**: 게시글(Post) CRUD API 구현
-2. **관계 설정**: 사용자와 게시글 간의 관계 설정
-3. **고급 검색**: 제목, 내용, 작성자별 게시글 검색
-
-### 고급 과제
-1. **인증/인가**: JWT 토큰 기반 인증 시스템 구현
-2. **파일 업로드**: 사용자 프로필 이미지 업로드 API
-3. **실시간 알림**: WebSocket을 활용한 실시간 알림 시스템
-
 ## 🎨 Swagger UI 커스터마이징
 
 프로젝트에서는 Swagger UI를 다음과 같이 커스터마이징했습니다:
@@ -202,26 +168,6 @@ docker buildx build --platform linux/amd64,linux/arm64 \
 - [Swagger 공식 문서](https://swagger.io/docs/)
 - [OpenAPI 3.0 스펙](https://swagger.io/specification/)
 - [class-validator 문서](https://github.com/typestack/class-validator)
-
-## 🤝 기여하기
-
-이 강의 자료를 개선하고 싶으시다면:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
-
-## 👨‍🏫 강사 정보
-
-- **이름**: 강사
-- **이메일**: instructor@example.com
-- **웹사이트**: https://example.com
 
 ---
 
